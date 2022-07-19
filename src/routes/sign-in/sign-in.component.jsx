@@ -5,6 +5,8 @@ import {
     createUserDocumentFromAuth, 
 } from "../../utilities/firebase/firebase.utilities";
 
+import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
+
 const SignIn = () => {
     const logGoogleUser = async () => {
         const { user } = await signInWithGooglePopUp();
@@ -18,6 +20,7 @@ const SignIn = () => {
             <p>To accomodate for the needs of all our customers, we have multiple ways for you to sign in and view your Stars Rewards!</p>
             <button onClick={logGoogleUser}>Sign In via Google (Popup)</button>
             <button onClick={signInWithGoogleRedirect}>Sign In via Google (Redirect)</button>
+            <SignUpForm />
         </div>
     );
 };
