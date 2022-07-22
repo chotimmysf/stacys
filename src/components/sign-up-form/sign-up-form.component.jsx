@@ -1,6 +1,8 @@
-import { getByDisplayValue } from "@testing-library/react";
 import { useState } from "react";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utilities/firebase/firebase.utilities";
+import FormInput from "../form-input/form-input.component";
+import Button from "../button/button.component";
+import './sign-up-form.styles.scss';
 
 const defaultFormFields = {
     username: '',
@@ -57,22 +59,51 @@ const SignUpForm = () => {
     };
 
     return (
-        <div>
-            <h1>Sign Up with your Email & Password</h1>
+        <div className="sign-up-container">
+            <h2>Not a Stars Rewards Member?</h2>
+            <span>Sign Up with your Email & Password</span>
             <form onSubmit={handleSubmit}>
-                <label for="username">Username</label>
-                    <input type="text" placeholder="Enter a username." required 
-                    onChange={handleChange} name="username" value={username} />
-                <label for="email">Email</label>
-                    <input type="email" placeholder="Enter your email." required 
-                    onChange={handleChange} name="email" value={email} />
-                <label for="password">Password</label>
-                    <input type="password" placeholder="Enter a password." required 
-                    onChange={handleChange} name="password" value={password} />
-                <label for="passwordConfirm">Confirm your Password</label>
-                    <input type="password" placeholder="Confirm your password." required 
-                    onChange={handleChange} name="passwordConfirm" value={passwordConfirm} />
-                <button type="submit">Become a Stars Rewards Member!</button>
+                <FormInput 
+                label="Username"
+                id="username"
+                type="text"
+                placeholder="Enter a username."
+                required
+                onChange={handleChange}
+                name="username"
+                value={username} 
+                />
+                <FormInput 
+                label="Email"
+                id="emailAddress"
+                type="email"
+                placeholder="Enter an email address."
+                required
+                onChange={handleChange}
+                name="email"
+                value={email} 
+                />
+                <FormInput 
+                label="Password"
+                id="password"
+                type="password"
+                placeholder="Enter a password."
+                required
+                onChange={handleChange}
+                name="password"
+                value={password} 
+                />
+                <FormInput 
+                label="Confirm Password"
+                id="passwordConfirm"
+                type="password"
+                placeholder="Confirm your password."
+                required
+                onChange={handleChange}
+                name="passwordConfirm"
+                value={passwordConfirm} 
+                />
+            <Button type="submit">Become a Stacy's Member!</Button>
             </form>
         </div>
     )
