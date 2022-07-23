@@ -15,8 +15,6 @@ const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { username, email, password, passwordConfirm } = formFields;
 
-    console.log(formFields);
-
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
     }
@@ -24,7 +22,7 @@ const SignUpForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        if(password != passwordConfirm) {
+        if(password !== passwordConfirm) {
             alert("Passwords do not match.");
             return;
         }
@@ -60,12 +58,11 @@ const SignUpForm = () => {
 
     return (
         <div className="sign-up-container">
-            <h2>Not a Stars Rewards Member?</h2>
-            <span>Sign Up with your Email & Password</span>
+            <h1>Not a Stars Rewards Member? Sign Up!</h1>
+            <p>Having a Stars Rewards account with Stacy's allows you to earn 2% unlimited cash back on all purchases made on stacys.com and Stacy's stores!</p>
             <form onSubmit={handleSubmit}>
                 <FormInput 
                 label="Username"
-                id="username"
                 type="text"
                 placeholder="Enter a username."
                 required
@@ -75,7 +72,6 @@ const SignUpForm = () => {
                 />
                 <FormInput 
                 label="Email"
-                id="emailAddress"
                 type="email"
                 placeholder="Enter an email address."
                 required
@@ -85,7 +81,6 @@ const SignUpForm = () => {
                 />
                 <FormInput 
                 label="Password"
-                id="password"
                 type="password"
                 placeholder="Enter a password."
                 required
@@ -95,7 +90,6 @@ const SignUpForm = () => {
                 />
                 <FormInput 
                 label="Confirm Password"
-                id="passwordConfirm"
                 type="password"
                 placeholder="Confirm your password."
                 required
@@ -103,7 +97,7 @@ const SignUpForm = () => {
                 name="passwordConfirm"
                 value={passwordConfirm} 
                 />
-            <Button type="submit">Become a Stacy's Member!</Button>
+            <Button type="submit">Sign Up & Start Earning Stars!</Button>
             </form>
         </div>
     )
