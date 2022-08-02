@@ -1,7 +1,11 @@
-import { useState } from "react";
-import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utilities/firebase/firebase.utilities";
+import { useState, useContext } from "react";
+
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
+import { UserContext } from "../../context/user.context";
+
+import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utilities/firebase/firebase.utilities";
+
 import './sign-up-form.styles.scss';
 
 const defaultFormFields = {
@@ -14,6 +18,7 @@ const defaultFormFields = {
 const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { username, email, password, passwordConfirm } = formFields;
+    const { setCurrentUser } = useContext(UserContext);
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
@@ -34,11 +39,12 @@ const SignUpForm = () => {
 
         try {
             const { user } = await createAuthUserWithEmailAndPassword(email, password);
-          
+
             await createUserDocumentFromAuth(user, {
-                username, email
+                username
             });
             resetFormFields();
+            setCurrentUser(user);
 
             alert("Success! Welcome to the Stacy's Stars Rewards Club!");
 
