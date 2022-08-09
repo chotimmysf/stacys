@@ -4,11 +4,16 @@ import { Outlet, Link } from "react-router-dom";
 import { ReactComponent as StacysLogo } from '../../assets/six-pointed-star-svgrepo-com.svg';
 import './navigation.styles.scss';
 
+import CartIcon from "../../components/cart-icon/cart-icon.component";
+import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+
 import { UserContext } from "../../context/user.context";
+import { CartContext } from "../../context/cart.context";
 import { signOutUser } from "../../utilities/firebase/firebase.utilities";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
+  const { isCartOpen } = useContext(CartContext);
 
     return (
       <Fragment>
@@ -33,7 +38,9 @@ const Navigation = () => {
                   </Link>
                 )
               }
+              <CartIcon/>
           </div>
+          {isCartOpen && <CartDropdown/>}
         </nav>
         <Outlet />
       </Fragment>
