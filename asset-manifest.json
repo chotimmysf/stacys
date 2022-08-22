@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/stacys/static/css/main.139db15c.css",
+    "main.js": "/stacys/static/js/main.4eb78e95.js",
+    "static/js/787.1fe6d675.chunk.js": "/stacys/static/js/787.1fe6d675.chunk.js",
+    "static/media/shopping-bag.svg": "/stacys/static/media/shopping-bag.a688874f6f1507316bdfa420328a4a53.svg",
+    "static/media/six-pointed-star-svgrepo-com.svg": "/stacys/static/media/six-pointed-star-svgrepo-com.1f69bf532b5140fbbdc69ee62c7836e5.svg",
+    "index.html": "/stacys/index.html",
+    "main.139db15c.css.map": "/stacys/static/css/main.139db15c.css.map",
+    "main.4eb78e95.js.map": "/stacys/static/js/main.4eb78e95.js.map",
+    "787.1fe6d675.chunk.js.map": "/stacys/static/js/787.1fe6d675.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.139db15c.css",
+    "static/js/main.4eb78e95.js"
+  ]
+}
