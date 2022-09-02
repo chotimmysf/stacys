@@ -1,3 +1,5 @@
+$half-view: 1000px;
+
 .product-card-container {
     width: 100%;
     display: flex;
@@ -5,6 +7,10 @@
     height: 400px;
     align-items: center;
     position: relative;
+
+    @media (max-width: $half-view) {
+        height: 250px;
+    }
 
     img {
         width: 100%;
@@ -17,8 +23,12 @@
         width: 80%;
         opacity: 0.7;
         position: absolute;
-        top: 255px;
+        top: 256px;
         display: none;
+
+        @media (max-width: $half-view) {
+            top: 160px;
+        }
     }
 
     &:hover {
@@ -33,11 +43,17 @@
     }
 
     .footer {
-        width: 100%;
+        width: 94%;
         height: 5%;
         display: flex;
         justify-content: space-between;
         font-size: 18px;
+
+        @media (max-width: $half-view) {
+            width: 95%;
+            font-size: 12px;
+            padding-right: 6px;
+        }
 
         .name {
             width: 90%;

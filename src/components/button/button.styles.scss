@@ -3,6 +3,7 @@ $white: #ffffff;
 $black: #000000;
 $google-blue: #4285f4;
 $google-yellow: #F4B400;
+$half-view: 1000px;
 
 .button-container {
     min-width: 168px;
@@ -21,6 +22,13 @@ $google-yellow: #F4B400;
     display: flex;
     justify-content: center;
     border-radius: 10px;
+    transition: all 0.3s ease-out; 
+
+    @media (max-width: $half-view) {
+        height: 40px;
+        line-height: 40px;
+        font-size: 12px;
+    }
 
     &:hover {
         background-color: $white;
