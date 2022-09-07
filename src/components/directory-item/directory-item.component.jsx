@@ -7,7 +7,7 @@ const DirectoryItem = ({ category }) => {
         <div className="background-image" style={{
           backgroundImage: `url(${imageUrl})`
         }}/>
-        <div className="directory-body-container">
+        <div className="body">
           <h1>{title}</h1>
           <p>Shop for {title}</p>
         </div>
